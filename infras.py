@@ -1,21 +1,18 @@
-class Infra :
-    def __init__(self, infra_id, length, infra_type, nb_houses):
+class Infra:
+    def __init__(self, infra_id, longueur, infra_type, nb_maisons):
         self.infra_id = infra_id
-        self.length = length
+        self.longueur = longueur
         self.infra_type = infra_type
-        self.nb_houses = nb_houses
+        self.nb_maisons = nb_maisons
 
-    def repair_infra(self):
-        self.infra_type = "infra_intacte"
+    def reparer_infra(self):
+        self.type_infra = "infra_intacte"
     
-    def get_infra_difficulty(self):
+    def obtenir_difficulte_infra(self):
         if self.infra_type == "infra_intacte":
             return 0
         else:
-            return self.length / self.nb_houses
+            return self.longueur / self.nb_maisons
     
-    def __radd__(self, other_infra):
-        return self.get_infra_difficulty() + other_infra
-
-
-
+    def __radd__(self, autre_infra):
+        return self.obtenir_difficulte_infra() + autre_infra

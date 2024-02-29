@@ -1,10 +1,10 @@
-class Building:
-    def __init__(self, id_batiment, list_infras):
+class Batiment:
+    def __init__(self, id_batiment, liste_infras):
         self.id_batiment = id_batiment
-        self.list_infras = list_infras
+        self.liste_infras = liste_infras
     
-    def get_building_difficulty(self):
-        return sum(self.list_infras)
+    def obtenir_difficulte_batiment(self):
+        return sum(self.liste_infras)
 
     def __lt__(self, autre_batiment):
-        return self.get_building_difficulty() < autre_batiment.get_building_difficulty()
+        return self.obtenir_difficulte_batiment() < autre_batiment.obtenir_difficulte_batiment()
