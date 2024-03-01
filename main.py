@@ -58,14 +58,11 @@ liste_batiments_classes = planification(liste_infra, liste_batiment)
 
 results = []
 
-# Parcourir chaque bâtiment classé et récupérer ses informations
 for index, batiment_classe in enumerate(liste_batiments_classes):
     results.append({"priorite": index,"id_batiment": batiment_classe.id_batiment, "difficulty": batiment_classe.obtenir_difficulte_batiment()})
 
-# Créer un DataFrame à partir des résultats
 df_results = pd.DataFrame(results)
 
-# Écrire les résultats dans un fichier CSV
 df_results.to_csv('results.csv', index=False)
 
 print("Les résultats ont été écrits dans le fichier 'results.csv'.")
