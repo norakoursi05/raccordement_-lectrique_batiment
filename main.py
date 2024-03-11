@@ -2,7 +2,7 @@ import batiment
 import infras
 import pandas as pd
 
-df = pd.read_excel('data/reseau_en_arbre.xlsx').drop_duplicates()
+df = pd.read_csv('reseau_en_arbre.csv').drop_duplicates()
 
 
 def prepare_data(df):
@@ -63,9 +63,8 @@ for index, batiment_classe in enumerate(liste_batiments_classes):
 
 df_results = pd.DataFrame(results)
 
-df_results.to_csv('data/results.csv', index=False)
-df_results.to_excel('data/results.xlsx', index=False)
+df_results.to_csv('results.csv', index=False)
+df_results.to_excel('results.xlsx', index=False)
 
 print("Les résultats ont été écrits dans le fichier 'results.csv'.")
 print("Les résultats ont été écrits dans le fichier 'results.xlsx'.")
-
